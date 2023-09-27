@@ -17,10 +17,12 @@ public class LinkedListOfInteger {
         head = null;
         tail = null;
         count = 0;
+
+
     }
 
     /**********************************************************************************
-    /*** CREATE | Operações de inserção de dados na lista encadeada
+    /*** CREATE |   ddddd Operações de inserção de dados na lista encadeada
     /**********************************************************************************
 
     /**
@@ -139,7 +141,7 @@ public class LinkedListOfInteger {
             tail.element = element;
             return auxElem;
         }
-        
+
         Node aux = head;
         int c = 0;
         while (c < index) {
@@ -160,12 +162,12 @@ public class LinkedListOfInteger {
      * Remove a primeira ocorrencia do elemento na lista, se estiver presente.
      * @param element o elemento a ser removido
      * @return true se a lista contem o elemento especificado
-     */   
+     */
     public boolean remove(Integer element) {
         // Se a lista esta vazia
         if (count == 0)
             return false;
-        
+
         // Se remocao do primeiro elemento da lista
         if (element.equals(head.element)) {
             if (count == 1) { // se tem apenas um elemento na lista
@@ -175,10 +177,10 @@ public class LinkedListOfInteger {
             count--;
             return true;
         }
-        
+
         Node ant = head; // referencia aponta para o anterior
         Node aux = head.next; // referencia aponta para o elemento que esta sendo verificado
-        
+
         for (int i=1; i<count; i++) {
             if (aux.element.equals(element)) { // se achou o elemento a ser removido
                 if (aux == tail) { // se remocao do ultimo
@@ -193,7 +195,7 @@ public class LinkedListOfInteger {
             }
             aux = aux.next;
             ant = ant.next;
-        }   
+        }
         // Se nao removeu
         return false;
     }
@@ -208,7 +210,7 @@ public class LinkedListOfInteger {
     public Integer removeByIndex(int index) {
         if (index < 0 || index >= size())
             throw new IndexOutOfBoundsException();
-        
+
         // Se remocao do primeiro
         if (index == 0) {
             Integer elemRemovido = head.element;
