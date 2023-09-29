@@ -17,16 +17,6 @@ public class App {
         System.out.println(lista);
 
 
-        Integer sub[] = lista.sublist(2,2);
-        for(int i = 0; i < sub.length; i++) {
-            System.out.print(sub[i] + " | ");
-        }
-
-
-        lista.reverse();
-        System.out.println(lista);
-
-
         System.out.println(lista.countOccurences(30));
 
 
