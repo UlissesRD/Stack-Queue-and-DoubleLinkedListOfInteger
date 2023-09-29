@@ -18,11 +18,10 @@ public class LinkedListOfInteger {
         tail = null;
         count = 0;
 
-
     }
 
     /**********************************************************************************
-    /*** CREATE |   ddddd Operações de inserção de dados na lista encadeada
+    /*** CREATE |   Operações de inserção de dados na lista encadeada
     /**********************************************************************************
 
     /**
@@ -324,47 +323,10 @@ public class LinkedListOfInteger {
         return s.toString();
     }
 
-
-     /**********************************************************************************
-     /*** ATIVIDADES PRÁTICAS
-     /**********************************************************************************
-
-
-      /**
-      * Método int[] subList(int fromIndex, int toIndex)
-      * Cria um novo arranjo de valores inteiros a partir de um escopo definido da lista original
-      * @param fromIndex o índice inicial do escopo (incluído)
-      * @param toIndex o índice final do escopo (não incluído)
-      * @return retorna um arranjo com os elementos da lista original
-      */
-     public Integer[] sublist(int fromIndex, int toIndex){
-
-         if(fromIndex < 0 || fromIndex > count || (fromIndex > toIndex) || (fromIndex == toIndex)){
-             throw new IndexOutOfBoundsException();
-         }
-
-         //int tam = (toIndex - fromIndex) == 0 ? 1 : (toIndex - fromIndex);
-
-         Integer[] sub = new Integer[toIndex - fromIndex];
-         Node node = head;
-
-         int c = 0, i = 0;
-         while(c < toIndex){
-             if (c >= fromIndex){
-                 sub[i] = node.element;
-                 i++;
-             }
-             node = node.next;
-             c++;
-         }
-         return sub;
-     }
-
-
     /**
      * Método reverse()
      * inverte a lista encadeada
-     */
+
 
 
 
@@ -381,12 +343,16 @@ public class LinkedListOfInteger {
          }
          head = temp;
      }
+     */
+
+    /***************************************************************************************************
+     /*** IMPLEMENTAÇÃO DOS MÉTODOS countOccurrences(Integer element) E boolean removeEvenNumbers( ... )
+     /***************************************************************************************************
 
     /**
-     * Método int countOccurrences(int element)
-     * Conta a quantidade de ocorrência de um elemento na lista encadeada
-     * @param element valor inteiro correspondente ao dado a ser verificado
-     * @return quantidade de vezes que o valor foi encontrado
+     *      Método que conta o número de ocorrências do elemento passado como parâmetro na lista, retornando este valor
+     *      * @param element elemento a ser inserido
+     *      * @return valor inteiro relativo ao número de ocorrências encontradas
      */
 
     public int countOccurences(Integer element){
