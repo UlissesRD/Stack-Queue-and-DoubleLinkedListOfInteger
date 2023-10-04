@@ -368,4 +368,37 @@ public class LinkedListOfInteger {
         return c;
     }
 
+    /**
+     * Método que percorre a lista removendo todos os elementos pares.
+     * Defina os atributos necessários para este algoritmo, pois nenhum método já implementado pode ser chamado
+     * pois nenhum método já implementado pode ser chamado.
+     * @return true se houver alguma remoção, e false caso não tenham elementos pares e não seja feita remoção
+     */
+    public boolean removeEvenNumbers() {
+        boolean removed = false;
+
+        if (head == null) {
+            return false;
+        }
+
+        Node prev = null;
+        Node current = head;
+
+        while (current != null) {
+            if (current.element % 2 == 0) {
+                if (prev != null) {
+                    prev.next = current.next;
+                } else {
+                    head = current.next;
+                }
+                count--;
+                removed = true;
+            } else {
+                prev = current;
+            }
+            current = current.next;
+        }
+
+        return removed;
+    }
 }
