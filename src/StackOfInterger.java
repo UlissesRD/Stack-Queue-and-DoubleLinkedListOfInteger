@@ -36,4 +36,26 @@ public class StackOfInterger {
     public void clear(){
         list.clear();
     }
+
+    /**
+     * Método reverseArrayUsingStack()
+     * Método estático que recebe um arranjo de inteiros e utiliza uma pilha implementada para inverter seu conteúdo
+     * @param arr arranjo inteiros
+     * @return o arranjo de inteiros com os dados invertidos
+     */
+    public static Integer[] reverseArrayUsingStack(Integer[] arr) {
+        StackOfInterger stack = new StackOfInterger();
+
+        for (int element : arr) {
+            stack.push(element);
+        }
+
+        Integer[] reversedArr = new Integer[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            reversedArr[i] = stack.pop();
+        }
+
+        return reversedArr;
+    }
 }
