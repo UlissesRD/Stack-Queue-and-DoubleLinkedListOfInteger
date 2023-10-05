@@ -327,7 +327,7 @@ public class LinkedListOfInteger {
      * Método reverse()
      * inverte a lista encadeada
 
-
+    //método extra - caso precise
 
 
      public void reverse() {
@@ -398,7 +398,6 @@ public class LinkedListOfInteger {
             }
             current = current.next;
         }
-
         return removed;
     }
 }
