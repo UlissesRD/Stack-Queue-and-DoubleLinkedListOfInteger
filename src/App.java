@@ -3,26 +3,34 @@ public class App {
 
     public static void main(String[] args) {
 
-        LinkedListOfInteger lista = new LinkedListOfInteger();
+        StackOfInterger stack = new StackOfInterger();
 
-        lista.add(1);
-        //lista.add(2);
-        lista.add(3);
-        //lista.add(4);
-        lista.add(3);
-        //lista.add(6);
-        lista.add(5);
-        //lista.add(8);
-        lista.add(9);
+        // Adicionando elementos à pilha
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        stack.push(40);
+        stack.push(50);
+        stack.push(60);
+        stack.push(70);
+        stack.push(80);
 
-        System.out.println("Lista antes: " + lista);
-        boolean removed = lista.removeEvenNumbers();
-        System.out.println("Lista depois: " + lista);
+        // Imprimindo o tamanho da pilha
+        System.out.println("Tamanho da pilha: " + stack.size());
 
-        if (removed) {
-            System.out.println("Números pares removidos.");
-        } else {
-            System.out.println("Nenhum número par encontrado ou a lista está vazia.");
+        // Verificando se a pilha está vazia
+        System.out.println("A pilha está vazia? " + stack.isEmpty());
+
+        // Imprimindo o elemento no topo da pilha
+        System.out.println("Elemento no topo da pilha: " + stack.top());
+
+        // Removendo elementos da pilha
+        System.out.println("Removendo elementos da pilha:");
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop());
         }
+
+        // Verificando se a pilha está vazia após a remoção
+        System.out.println("A pilha está vazia? " + stack.isEmpty());
     }
 }
