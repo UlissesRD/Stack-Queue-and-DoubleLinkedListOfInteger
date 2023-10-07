@@ -296,5 +296,62 @@ public class DoubleLinkedListOfInteger {
         }
         return s.toString();
     }
+
+    /***************************************************************************************************
+     /*** IMPLEMENTAÇÃO DOS MÉTODOS countOccurrences(Integer element) E boolean removeEvenNumbers( ... )
+     /***************************************************************************************************
+
+     /**
+     *      Método que conta o número de ocorrências do elemento passado como parâmetro na lista, retornando este valor
+     *      * @param element elemento a ser inserido
+     *      * @return valor inteiro relativo ao número de ocorrências encontradas
+     */
+
+    public int countOccurrences(Integer element) {
+        int count = 0;
+        Node current = header; // Supondo que você tenha um nó de início chamado "header"
+
+        while (current != null) {
+            if (current.element != null && current.element.equals(element)) {
+                count++;
+            }
+            current = current.next;
+        }
+
+        return count;
+    }
+
+    /**
+     * Método que percorre a lista removendo todos os elementos pares.
+     * Defina os atributos necessários para este algoritmo, pois nenhum método já implementado pode ser chamado
+     * pois nenhum método já implementado pode ser chamado.
+     * @return true se houver alguma remoção, e false caso não tenham elementos pares e não seja feita remoção
+     */
+    public boolean removeEvenNumbers() {
+        boolean removed = false;
+
+        if (header == null) {
+            return false;
+        }
+
+        Node prev = null;
+        Node current = header;
+
+        while (current != null) {
+            if (current.element != null && current.element % 2 == 0) {
+                if (prev != null) {
+                    prev.next = current.next;
+                } else {
+                    header = current.next;
+                }
+                count--;
+                removed = true;
+            } else {
+                prev = current;
+            }
+            current = current.next;
+        }
+        return removed;
+    }
 }
 
