@@ -296,7 +296,5 @@ public class DoubleLinkedListOfInteger {
         }
         return s.toString();
     }
-
-
 }
 
